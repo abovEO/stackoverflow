@@ -30,14 +30,21 @@ public class Main {
                         question
                 );
 
-        Comment comment =
+        Comment commentq =
+                new Comment(
+                        3642384L,
+                        "Good question!",
+                        user1
+                );
+        Comment commenta =
                 new Comment(
                         3642384L,
                         "Good answer!",
                         user1
                 );
 
-        service.addComment(answer, comment);
+        service.addComment(answer, commenta);
+        service.addComment(question, commentq);
 
         Vote vote =
                 new Vote(
@@ -50,9 +57,20 @@ public class Main {
 
         System.out.println(question.getTitle());
         System.out.println(question.getContent());
+        System.out.println(
+                "Votes : " +
+                        question.getVoteCount()
+        );
+        System.out.println(
+                "Comments : " +
+                        question.getComments()
+        );
 
         System.out.println(answer.getContent());
-
+        System.out.println(
+                "Comments : " +
+                        answer.getComments()
+        );
         System.out.println(
                 "Votes : " +
                         answer.getVoteCount()
